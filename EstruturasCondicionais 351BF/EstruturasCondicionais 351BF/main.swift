@@ -97,3 +97,111 @@ func descontoLoja(valorTotal: Double, cartaoFidelidade: Bool) -> Bool {
 var vouTerDesconto: Bool = descontoLoja(valorTotal: 5000, cartaoFidelidade: false)
 print(vouTerDesconto)
 
+//MARK: Desafios
+
+
+//Desafio 1 -
+
+func verificarAprovacao(nota1: Double, nota2: Double) -> String {
+    let media = (nota1 + nota2) / 2
+    
+    if media >= 7 {
+        return "Aluno aprovado"
+    } else {
+        return "Aluno reprovado"
+    }
+}
+
+var nota1 = 8.5
+var nota2 = 1.0
+
+let resultado = verificarAprovacao(nota1: nota1, nota2: nota2)
+print(resultado)
+
+//Desafio 2 -
+
+func desconto(total: Double) -> Double {
+    if total < 100.0 {
+        return total * 0.9 // 10% de desconto
+    } else if total >= 100.0 && total <= 200.0 {
+        return total * 0.85 // 15% de desconto
+    } else {
+        return total * 0.8 // 20% de desconto
+    }
+}
+
+var totalCompra = 150.0
+let totalComDesconto = desconto(total: totalCompra)
+
+print("Total original: \(totalCompra)")
+print("Total com desconto: \(totalComDesconto)")
+
+//Desafio 3 -
+
+func semaforo(cor: String) -> String {
+    if cor == "vermelho" {
+        return "PARE"
+    } else if cor == "amarelo" {
+        return "ATENÇÃO"
+    } else if cor == "verde" {
+        return "SIGA EM FRENTE"
+    } else {
+        return "PARÂMETRO INVÁLIDO"
+    }
+}
+
+let cor1 = "vermelho"
+let cor2 = "amarelo"
+let cor3 = "verde"
+let cor4 = "azul"
+
+print(semaforo(cor: cor1))
+print(semaforo(cor: cor2))
+print(semaforo(cor: cor3))
+print(semaforo(cor: cor4))
+
+//Desafio 4 -
+
+func decidirAtividade(eFimDeSemana: Bool, tenhoDinheiro: Bool) {
+    if eFimDeSemana && tenhoDinheiro {
+        print("VAMOS PASSEAR")
+    } else {
+        print("VAMOS FICAR EM CASA")
+    }
+}
+
+var eFimDeSemana = true
+var tenhoDinheiro = true
+
+decidirAtividade(eFimDeSemana: eFimDeSemana, tenhoDinheiro: tenhoDinheiro)
+
+//Desafio 5 -
+
+func verificarParidade(numero: Int) -> Bool {
+    return numero % 2 == 0
+}
+
+var numero1 = 10
+var numero2 = 7
+
+print(verificarParidade(numero: numero1)) // Deve imprimir true, pois 10 é par
+print(verificarParidade(numero: numero2)) // Deve imprimir false, pois 7 é ímpar
+
+//Desafio 6 -
+
+func compararValores(valor1: Double, valor2: Double) -> String {
+    if valor1 > valor2 {
+        return "Bola"
+    } else {
+        return "Banana"
+    }
+}
+
+var valorA = 7.5
+var valorB = 5.0
+
+let resultado1 = compararValores(valor1: valorA, valor2: valorB) // Deve retornar "Bola"
+print(resultado1)
+
+let resultado2 = compararValores(valor1: valorB, valor2: valorA) // Deve retornar "Banana"
+print(resultado2)
