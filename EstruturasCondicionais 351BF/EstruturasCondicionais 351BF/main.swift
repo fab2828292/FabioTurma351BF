@@ -205,3 +205,68 @@ print(resultado1)
 
 let resultado2 = compararValores(valor1: valorB, valor2: valorA) // Deve retornar "Banana"
 print(resultado2)
+
+
+//MARK: Desafios de casa
+
+func calculateBMI(weight: Double, height: Double) -> Double {
+    let bmi = weight / (height * height)
+    return bmi
+}
+
+func getUserInput(prompt: String) -> Double {
+    print(prompt, terminator: "")
+    let input = readLine()
+    
+    if let inputValue = input, let value = Double(inputValue) {
+        return value
+    } else {
+        print("Entrada inválida. Por favor, insira um valor numérico.")
+        return getUserInput(prompt: prompt)
+    }
+}
+
+func main() {
+    print("Calculadora de IMC")
+    
+    let weight = getUserInput(prompt: "Insira o peso em kg: ")
+    let height = getUserInput(prompt: "Insira a altura em metros: ")
+    
+    let bmi = calculateBMI(weight: weight, height: height)
+    
+    print("Seu IMC é: \(bmi)")
+}
+
+//Desafio 2
+
+func rollDice() -> Int {
+    return Int.random(in: 1...6)
+}
+
+func main() {
+    let rollResult = rollDice()
+    
+    switch rollResult {
+        case 1:
+            print("Você rolou um 1 - Cara triste")
+        case 2:
+            print("Você rolou um 2 - Cara feliz")
+        case 3:
+            print("Você rolou um 3 - Estrela")
+        case 4:
+            print("Você rolou um 4 - Lua")
+        case 5:
+            print("Você rolou um 5 - Coração")
+        case 6:
+            print("Você rolou um 6 - Carinha sorridente")
+        default:
+            print("Algo deu errado na simulação do dado.")
+    }
+}
+
+
+
+
+
+
+
